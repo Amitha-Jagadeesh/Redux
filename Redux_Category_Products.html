@@ -263,7 +263,7 @@
             }
             handleSelectionChange(event){
                 store.getState().categories.map(category=> {
-                    if(category.id === Number(event.target.value)){
+                    if(Number(category.id) === Number(event.target.value)){
                         console.log(category.name)
                         this.setState({
                             category_id:category.id,
@@ -291,6 +291,7 @@
             render(){
                 return(
                     <div>
+                        <h2>Add Product Form</h2>
                         <form onSubmit = {this.handleSubmit}>
                             <label> id
                                 <input type = 'number' name = 'id' value = {this.state.id} onChange = {this.handleChange}/>
